@@ -10,7 +10,6 @@ class Ui_Form(QMainWindow):
             
             
     def setupUi(self, Form ):
-        
         Form.setObjectName("Form")
         Form.resize(350, 230)
         Form.setStyleSheet("background-color: rgb(245, 194, 17);")
@@ -59,3 +58,5 @@ class Ui_Form(QMainWindow):
 
     def clicked(self):
         db.change_price()
+
+

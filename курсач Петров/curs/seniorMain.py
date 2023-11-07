@@ -63,6 +63,7 @@ class MainSenior(QtWidgets.QMainWindow):
         self.change = change_price.Ui_Form()
         self.change.show()
 
+    
 
 
 if __name__ == "__main__":

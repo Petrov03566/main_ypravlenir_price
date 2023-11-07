@@ -1,6 +1,7 @@
 import sys
 import seniorMain
-
+import adn2
+import client
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication,QMainWindow
 
@@ -58,12 +59,16 @@ class Login(QMainWindow):
 
     def btn_auth(self):
         if self.lineEdit.text() == '1' and self.lineEdit_2.text() == '1':
-            # self.window_test = TestWindow()
-            # self.window_test.show()
+            self.window_test =adn2.Admin_window()
+            self.window_test.show()
             pass
         if self.lineEdit.text() =='2' and self.lineEdit_2.text() =='2':
+
             self.senior =seniorMain.MainSenior()
             self.senior.show()
+        if self.lineEdit.text() =='3' and self.lineEdit_2.text() =='3':
+            self.client =client.db_client()
+            self.client.show()
 
 if __name__ == "__main__":
     app =QApplication(sys.argv)

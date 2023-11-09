@@ -2,7 +2,7 @@ import sys
 import db
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication,QMainWindow
-from PyQt5.QtSql import QSqlDatabase
+from PyQt5.QtSql import QSqlDatabase,QSqlQuery,QSqlQueryModel
 class Admin_window(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -30,10 +30,13 @@ class Admin_window(QMainWindow):
         font.setPointSize(14)
         self.push_db.setFont(font)
         self.push_db.setObjectName("push_db")
+        self.push_db.clicked.connect(self.dobavit_tovar)
+    
         self.TableView = QtWidgets.QTableView(Admin_window)
         self.TableView.setGeometry(QtCore.QRect(20, 70, 781, 281))
         self.TableView.setStyleSheet("background-color: rgb(246, 245, 244);")
         self.TableView.setObjectName("TableView")
+        self.TableView.setGeometry(QtCore.QRect(50, 70, 400, 400))
         self.label_3 = QtWidgets.QLabel(Admin_window)
         self.label_3.setGeometry(QtCore.QRect(30, 460, 241, 18))
         font = QtGui.QFont()
@@ -59,9 +62,11 @@ class Admin_window(QMainWindow):
         self.lineEdit = QtWidgets.QLineEdit(Admin_window)
         self.lineEdit.setGeometry(QtCore.QRect(30, 420, 291, 26))
         self.lineEdit.setObjectName("lineEdit")
+      
         self.lineEdit_2 = QtWidgets.QLineEdit(Admin_window)
         self.lineEdit_2.setGeometry(QtCore.QRect(30, 480, 291, 26))
         self.lineEdit_2.setObjectName("lineEdit_2")
+        
         self.label_4 = QtWidgets.QLabel(Admin_window)
         self.label_4.setGeometry(QtCore.QRect(510, 460, 241, 18))
         font = QtGui.QFont()
@@ -90,7 +95,6 @@ class Admin_window(QMainWindow):
         self.lineEdit_4 = QtWidgets.QLineEdit(Admin_window)
         self.lineEdit_4.setGeometry(QtCore.QRect(510, 420, 291, 26))
         self.lineEdit_4.setObjectName("lineEdit_4")
-
         self.retranslateUi(Admin_window)
         QtCore.QMetaObject.connectSlotsByName(Admin_window)
 
@@ -103,3 +107,8 @@ class Admin_window(QMainWindow):
         self.label_2.setText(_translate("Admin_window", "Срок годности"))
         self.label_4.setText(_translate("Admin_window", "Изменённая цена на товар"))
         self.label_6.setText(_translate("Admin_window", "Цена на товара"))
+    def dobavit_tovar(self):
+        db.spisok_tovar(name=self.lineEdit_2.text(), price=self.lineEdit_4.text(), term=self.lineEdit.text())
+        self.TableView.setModel(db.get_models())
+    
+    

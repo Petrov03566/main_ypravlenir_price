@@ -46,7 +46,6 @@ class Login(QMainWindow):
         self.statusbar.setObjectName("statusbar")
         self.setStatusBar(self.statusbar)
         self.pushButton_auth.clicked.connect(self.btn_auth)
-
         self.retranslateUi(self)
         QtCore.QMetaObject.connectSlotsByName(self)
 
@@ -61,14 +60,18 @@ class Login(QMainWindow):
         if self.lineEdit.text() == '1' and self.lineEdit_2.text() == '1':
             self.window_test =adn2.Admin_window()
             self.window_test.show()
-            pass
+            
         if self.lineEdit.text() =='2' and self.lineEdit_2.text() =='2':
-
             self.senior =seniorMain.MainSenior()
             self.senior.show()
         if self.lineEdit.text() =='3' and self.lineEdit_2.text() =='3':
             self.client =client.db_client()
             self.client.show()
+    
+
+ 
+  
+
 
 if __name__ == "__main__":
     app =QApplication(sys.argv)

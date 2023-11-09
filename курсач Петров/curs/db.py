@@ -1,3 +1,4 @@
+
 from PyQt5.QtSql import QSqlDatabase,QSqlQuery,QSqlQueryModel, QSqlTableModel
 from PyQt5.QtCore import Qt
 
@@ -27,3 +28,11 @@ def skidka_1(proce ,nomer_tovar):
 def change_price(number, number2):
     mod2 = QSqlQuery()
     mod2.exec(f"UPDATE public.product SET price ={number} WHERE id = {number2}")
+
+def spisok_tovar(name, price , term):
+    mod3 = QSqlQuery()
+    mod3.exec(f"INSERT INTO public.product (name, term, price) VALUES ('{name}','{term}','{price}' )")
+    idPriduct = mod3.lastInsertId()
+    mod3.clear()
+    mod3.exec(f"INSERT INTO public.discounts (procent, product_id) VALUES ('0', '{idPriduct}')")
+    

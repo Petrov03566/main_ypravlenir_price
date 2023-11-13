@@ -33,10 +33,10 @@ class Admin_window(QMainWindow):
         self.push_db.clicked.connect(self.dobavit_tovar)
     
         self.TableView = QtWidgets.QTableView(Admin_window)
-        self.TableView.setGeometry(QtCore.QRect(20, 70, 781, 281))
+        self.TableView.setGeometry(QtCore.QRect(170, 70, 519, 281))
         self.TableView.setStyleSheet("background-color: rgb(246, 245, 244);")
         self.TableView.setObjectName("TableView")
-        self.TableView.setGeometry(QtCore.QRect(50, 70, 400, 400))
+        # self.TableView.setGeometry(QtCore.QRect(50, 70, 400, 400))
         self.label_3 = QtWidgets.QLabel(Admin_window)
         self.label_3.setGeometry(QtCore.QRect(30, 460, 241, 18))
         font = QtGui.QFont()

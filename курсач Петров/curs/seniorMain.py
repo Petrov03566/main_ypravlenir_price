@@ -26,7 +26,7 @@ class MainSenior(QtWidgets.QMainWindow):
         self.add_btn.setObjectName("add_btn")
         self.add_btn.clicked.connect(self.clicked_add)
         self.table = QtWidgets.QTableView(self.centralwidget)
-        self.table.setGeometry(QtCore.QRect(290, 20, 621, 341))
+        self.table.setGeometry(QtCore.QRect(290, 20, 519, 341))
         self.table.setStyleSheet("background-color: rgb(246, 245, 244);")
         self.table.setObjectName("table")
         self.change_tovar = QtWidgets.QPushButton(self.centralwidget)
@@ -60,7 +60,7 @@ class MainSenior(QtWidgets.QMainWindow):
         self.table.setModel(db.get_models())
 
     def update_tovar(self):
-        self.change = change_price.Ui_Form()
+        self.change = change_price.Ui_Form(update=self.update)
         self.change.show()
 
     

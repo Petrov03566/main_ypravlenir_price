@@ -6,22 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>615</width>
-    <height>320</height>
+    <width>334</width>
+    <height>293</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>auth</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:  rgb(245, 194, 17)</string>
+   <string notr="true">background-color: rgb(229, 165, 10);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton_auth">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>60</y>
+      <x>110</x>
+      <y>160</y>
       <width>151</width>
       <height>41</height>
      </rect>
@@ -38,28 +38,40 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>70</y>
+      <x>80</x>
+      <y>40</y>
       <width>221</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(249, 240, 107);
+border-radius: 20px;
+border: rgb(255, 163, 72);
+</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>170</y>
+      <x>80</x>
+      <y>100</y>
       <width>221</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(249, 240, 107);
+border-radius: 20px;
+border: rgb(0,0,0);
+</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>30</y>
+      <x>20</x>
+      <y>50</y>
       <width>59</width>
       <height>18</height>
      </rect>
@@ -76,10 +88,10 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>130</y>
+      <x>10</x>
+      <y>110</y>
       <width>71</width>
-      <height>18</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
@@ -91,6 +103,30 @@
      <string>пароль</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_auth_3">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>210</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Выход</string>
+    </property>
+   </widget>
+   <zorder>pushButton_auth</zorder>
+   <zorder>lineEdit</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>pushButton_auth_3</zorder>
+   <zorder>lineEdit_2</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

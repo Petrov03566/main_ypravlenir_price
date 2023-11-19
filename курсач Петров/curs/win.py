@@ -69,7 +69,24 @@ class Admin(adn2.Admin_window):
         for column in range(columnCount):
             self.TableView.setColumnWidth(column, columnWidth)
  
-        self.TableView.clicked.connect(self.)   
+      self.TableView.clicked.connect(self.doxod)
+        self.TableView.clicked.connect(self.exit_0)
+        
+        
+    def exit_0(self):
+        self.close()
+        
+    def doxod(self):
+        model = QSqlQueryModel()
+        q = QSqlQuery(f"INSERT INTO public.cost (name, term, price, cost) VALUES('{self.lineEdit.text()}', '{self.lineEdit_2.text()}', {self.lineEdit_4.text()}")
+        q.exec()
+        model.clear()
+        model.setQuery("SELECT * FROM public.cost")
+        self.TableView.setModel()
+        self.lineEdit.text()
+        self.lineEdit_2.text()
+        self.lineEdit_4()
+        
     
     # def get_models2():
     #     model =QSqlQueryModel()
